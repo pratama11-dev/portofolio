@@ -66,6 +66,7 @@ body {
   overflow: hidden;
   text-align: center;
   display: block;
+  margin-bottom: 50px;
 }
 
 .small-container{
@@ -307,8 +308,9 @@ header a {
   padding: 10px;
 }
 .col-2 img{
-  width: 80%;
+  width: 60%;
   align-items: center;
+  margin-left: 40px;
 }
 .col-3 {
   flex-basis: 30%;
