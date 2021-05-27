@@ -39,7 +39,7 @@ export default function HomeScreen() {
 
     return (<>
         <div className="row">
-            <div className="col-1">
+            <div className="col-1" id="home">
                 <div className="banner">
                     <h1>PORT<span>FOLIO</span></h1>
                     {/* <div className="btn">
@@ -55,7 +55,7 @@ export default function HomeScreen() {
         </div>
 
         <div className="container">
-            <div className="topik">
+            <div className="topik" id="about">
                 <p>Let me introduce myself</p>
                 <h2>About Me</h2>
             </div>
@@ -74,7 +74,7 @@ export default function HomeScreen() {
         </div>
 
         <div className="container">
-            <div className="topik">
+            <div className="topik" id="portfolio">
                 <p>some of my recent works</p>
                 <h2>Projects</h2>
             </div>
@@ -116,7 +116,7 @@ export default function HomeScreen() {
                         <img src="../img/handshake.png" />
                     </div> */}
                     <div className="col-2">
-                        <div className="form-container">
+                        <div className="form-container" id="contact">
                             <h2>Contact Me</h2>
                             <label>Name</label>
                             <li>
