@@ -1,10 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import data from './data.js'
-// import path from 'path';
-// import mongoose from 'mongoose';
+import portfolioRouter from './routers/portfolioRouter.js';
+import mongoose from 'mongoose';
+import path from 'path';
 // import userRouter from './routers/userRouter.js';
-// import alatRouter from './routers/alatRouter.js';
 // import uploadRouter from './routers/uploadRouter.js';
 
 dotenv.config();
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.use('/api/uploads', uploadRouter);
 // app.use('/api/users', userRouter);
-// app.use('/api/alat', alatRouter);
+app.use('/api/portfolio', portfolioRouter);
 
 const __dirname = path.resolve();
 // app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
