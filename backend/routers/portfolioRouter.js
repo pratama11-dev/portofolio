@@ -16,7 +16,7 @@ portfolioRouter.get(
 
   portfolioRouter.get('/seed', 
     expressAsyncHandler( async(req, res) => {
-        await Portfolio.remove({});
+        // await Portfolio.remove({});
         const createdPortfolio = await Portfolio.insertMany(data.portfolio);
         res.send({ createdPortfolio });
     })
