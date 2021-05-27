@@ -14,25 +14,25 @@ portfolioRouter.get(
     })
   );
 
-  portfolioRouter.get('/seed', 
-    expressAsyncHandler( async(req, res) => {
-        // await Portfolio.remove({});
-        const createdPortfolio = await Portfolio.insertMany(data.portfolio);
-        res.send({ createdPortfolio });
-    })
+portfolioRouter.get('/seed', 
+  expressAsyncHandler( async(req, res) => {
+      // await Portfolio.remove({});
+      const createdPortfolio = await Portfolio.insertMany(data.portfolio);
+      res.send({ createdPortfolio });
+  })
 );
 
 portfolioRouter.get(
-    '/:id',
-    expressAsyncHandler(async (req, res) => {
-      const portfolio = await Portfolio.findById(req.params.id);
-      if (portfolio) {
-        res.send(portfolio);
-      } else {
-        res.status(404).send({ message: 'Tidak Menemukan Data' });
-      }
-    })
-  );
+  '/:id',
+  expressAsyncHandler(async (req, res) => {
+    const portfolio = await Portfolio.findById(req.params.id);
+    if (portfolio) {
+      res.send(portfolio);
+    } else {
+      res.status(404).send({ message: 'Tidak Menemukan Data' });
+    }
+  })
+);
 
 portfolioRouter.post(
   '/',

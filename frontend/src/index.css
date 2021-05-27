@@ -317,6 +317,7 @@ header a {
   min-width: 250px;
   margin-top: 50px;
   margin-bottom: 30px;
+  padding: 10px;
   text-align: center;
   transition: transform 0.5s;
   cursor: pointer;
