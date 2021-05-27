@@ -34,9 +34,9 @@ app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
 );
 
-app.get('/api/portfolio', (req, res) => {
-    res.send(data.portfolio);
-  });  
+// app.get('/api/portfolio', (req, res) => {
+//     res.send(data.portfolio);
+//   });  
 
 // app.get('/', ( req, res ) => {
 //     res.send('Server  is ready');
