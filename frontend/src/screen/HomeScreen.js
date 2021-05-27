@@ -1,6 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React,{ useEffect, useState } from 'react'
 import emailjs from 'emailjs-com'
+import axios from 'axios';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+// import { Link } from 'react-router-dom';
 
 export default function HomeScreen() {
 
@@ -16,16 +19,34 @@ export default function HomeScreen() {
       e.target.reset()
     }
 
+    const [portfolio, setPortfolio] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    useEffect(() => {
+        const fecthData = async () => {
+            try {
+                setLoading(true);
+                const { data } = await axios.get('/api/portfolio');
+                setLoading(false);
+                setPortfolio(data);
+              } catch (err) {
+                setError(err.message);
+                setLoading(false);
+              }
+            };
+            fecthData();
+          }, []);
+
     return (<>
         <div className="row">
             <div className="col-1">
                 <div className="banner">
                     <h1>PORT<span>FOLIO</span></h1>
-                    <div className="btn">
+                    {/* <div className="btn">
                         <Link to="/">
                             See My Works
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
@@ -59,19 +80,22 @@ export default function HomeScreen() {
             </div>
             <div className="small-container">
                 <div className="row">
-                    <div className="col-3">
-                        <a href="https://tokopaedi.herokuapp.com/">
-                            <img src="../img/tokopaedi.png" alt=""/>
-                        </a>
-                        <a href="https://tokopaedi.herokuapp.com/">
-                            <h2>Tokopaedi</h2>
-                        </a>
-                        <p /> 
-                        increasing use of online platforms by consumers and the presence of supporting startups such as Sirclo 
-                        and e-Commerce have helped build an accommodating environment for UMKM to design online stores, 
-                        manage transactions, and market product. 
-                    </div>
-                    <div className="col-3">
+                    {loading? <LoadingBox></LoadingBox>
+                    :
+                    error?<MessageBox>{error}</MessageBox>
+                    :<>
+                    {portfolio.map((portfolio) => (
+                        <div className="col-3">
+                            <a href={portfolio.link}>
+                                <img src={portfolio.gambar} alt=""/>
+                            </a>
+                            <a href={portfolio.link}>
+                                <h2>{portfolio.nama}</h2>
+                            </a>
+                            <p>{portfolio.desc}</p>
+                        </div>
+                    ))}
+                    {/* <div className="col-3">
                         <a href="https://virtual-lab-biology.herokuapp.com/">
                             <img src="../img/virtuallab.png" alt=""/>
                         </a>
@@ -81,18 +105,8 @@ export default function HomeScreen() {
                         <p />Virtual laboratory is a computer-based media that can be used for students to conduct experiments and can increase 
                         enthusiasm and motivate students. The use of a virtual laboratory can save time, 
                         and learning is more interesting. 
-                    </div>
-                    {/* <div className="col-3">
-                        <a href="https://virtual-lab-biology.herokuapp.com/">
-                            <img src="../img/virtuallab.png" alt=""/>
-                        </a>
-                        <a href="https://virtual-lab-biology.herokuapp.com/">
-                            <h2>Virtual Biologi Lab</h2>
-                        </a>
-                        <p />Pigeon Editor. Our company offers high quality products, 
-                        creative and neat image results. We believe in working with our clients and we are willing to tailor our 
-                        services to respond to the shifting priorities of each engagement. 
                     </div> */}
+                    </>}
                 </div>
             </div>
 
