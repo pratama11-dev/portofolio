@@ -1,9 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import data from './data.js'
-import portfolioRouter from './routers/portfolioRouter.js';
 import mongoose from 'mongoose';
 import path from 'path';
+import data from './data.js'
+import portfolioRouter from './routers/portfolioRouter.js';
 // import userRouter from './routers/userRouter.js';
 // import uploadRouter from './routers/uploadRouter.js';
 

@@ -16,7 +16,7 @@ portfolioRouter.get(
 
   portfolioRouter.get('/seed', 
     expressAsyncHandler( async(req, res) => {
-        // await Alat.remove({});
+        await Portfolio.remove({});
         const createdPortfolio = await Portfolio.insertMany(data.portfolio);
         res.send({ createdPortfolio });
     })
@@ -34,30 +34,30 @@ portfolioRouter.get(
     })
   );
 
-// portfolioRouter.post(
-//   '/',
+portfolioRouter.post(
+  '/',
 //   isAuth,
 //   isAdmin,
-//   expressAsyncHandler(async (req, res) => {
-//     const alat = new Alat({
-//       nama: 'sample ' + Date.now(),
-//       tujuan: 'sample',
-//       langkah: 'sample',
-//       tools: [
-//         {
-//           img:'/img/stetoskop.png',
-//           desc:'sample'
-//         },
-//       ]
-//     });
-//     const createdAlat = await alat.save();
-//     res.send({ message: 'Membuat Penelitian Baru', alat: createdAlat });
-//     if(createdAlat){
-//       return res.status(201).send({ message: "Membuat Penelitian Baru", data: createdAlat});
-//     }
-//     return res.status(500).send({ message: "Terjadi Kesalahan Dalam Membuat Data"})
-//   })
-// );
+  expressAsyncHandler(async (req, res) => {
+    // const alat = new Alat({
+    //   nama: 'sample ' + Date.now(),
+    //   tujuan: 'sample',
+    //   langkah: 'sample',
+    //   tools: [
+    //     {
+    //       img:'/img/stetoskop.png',
+    //       desc:'sample'
+    //     },
+    //   ]
+    // });
+    const createdPortfolio = await portfolio.save();
+    res.send({ message: 'Membuat Data Baru', portfolio: createdPortfolio });
+    if(createdPortfolio){
+      return res.status(201).send({ message: "Membuat Data Baru", data: createdPortfolio});
+    }
+    return res.status(500).send({ message: "Terjadi Kesalahan Dalam Membuat Data"})
+  })
+);
 
 // alatRouter.put(
 //   '/:id',

@@ -53,7 +53,7 @@ function App() {
                 </div>
                 <div className="footer-col-1">
                   <li>
-                    <Link to="/"><p>PORTOFOLIO</p></Link>
+                    <Link to="/"><p>PORTFOLIO</p></Link>
                   </li>
                   <li>
                     <Link to="/"><p>CONTACT ME</p></Link>
