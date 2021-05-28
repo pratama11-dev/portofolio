@@ -54,8 +54,8 @@ export default function HomeScreen() {
             <img src="../img/wave.png" alt=""/>
         </div>
 
-        <div className="container">
-            <div className="topik" id="about">
+        <div className="container" id="about">
+            <div className="topik">
                 <p>Let me introduce myself</p>
                 <h2>About Me</h2>
             </div>
@@ -63,18 +63,22 @@ export default function HomeScreen() {
                 <div className="col-2">
                     <img src="../img/pasfoto.png" alt=""/>
                 </div>
-                <div className="col-2">
+                <div className="col-1">
                     <p>Hello! I am Adit. I have been depveloping website. I'm Frontend Enginer.
                         Technologies i use is MERN Stack. I create responsive website that  are displayed
                         on all device desktop and smartphones. Before i start developing website. i will
                         discuss all the details of your Idea.
                     </p>
+                    <a className="btnRead" 
+                        href="https://drive.google.com/drive/folders/157HSNEdKUz2JGVKKsClytfnpXu6ZVAsH?usp=sharing"
+                        >See My CV
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div className="container">
-            <div className="topik" id="portfolio">
+        <div className="container" id="portfolio">
+            <div className="topik">
                 <p>some of my recent works</p>
                 <h2>Projects</h2>
             </div>
