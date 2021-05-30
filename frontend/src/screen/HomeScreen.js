@@ -113,41 +113,41 @@ export default function HomeScreen() {
                     </>}
                 </div>
             </div>
-
-            <div className="container">
-                <div className="row">
-                    <form className="form" onSubmit={sendEmail}>
-                        <div className="row">
-                            {/* <div className="col-2-simulasi">
-                                <img src="../img/handshake.png" />
-                            </div> */}
-                            <div className="col-2-simulasi">
-                                <div className="form-container" id="contact">
-                                    <h2>Contact Me</h2>
-                                    <label>Name</label>
-                                    <li>
-                                        <input type="text" placeholder="Name" name="name" />
-                                    </li>
-                                    <label>Email</label>
-                                    <li>
-                                        <input type="email" placeholder="Email Address" name="mail" />
-                                    </li>
-                                    <label>Subject</label>
-                                    <li>
-                                        <input type="text" placeholder="subject" name="subject" />
-                                    </li>
-                                    <label>Message</label>
-                                    <li>
-                                        <textarea type="text" id="" cols="30" rows="8" placeholder="Your Message" name="message" />
-                                    </li>
-                                    <li>
-                                        <input type="submit" className="btn" value="Send Message" />  
-                                    </li>
-                                </div>
+        </div>
+        
+        <div className="container">
+            <div className="row">
+                <form className="form" onSubmit={sendEmail}>
+                    <div className="row">
+                        {/* <div className="col-2-simulasi">
+                            <img src="../img/handshake.png" />
+                        </div> */}
+                        <div className="col-2-simulasi">
+                            <div className="form-container" id="contact">
+                                <h2>Contact Me</h2>
+                                <label>Name</label>
+                                <li>
+                                    <input type="text" placeholder="Name" name="name" />
+                                </li>
+                                <label>Email</label>
+                                <li>
+                                    <input type="email" placeholder="Email Address" name="mail" />
+                                </li>
+                                <label>Subject</label>
+                                <li>
+                                    <input type="text" placeholder="subject" name="subject" />
+                                </li>
+                                <label>Message</label>
+                                <li>
+                                    <textarea type="text" id="" cols="30" rows="8" placeholder="Your Message" name="message" />
+                                </li>
+                                <li>
+                                    <input type="submit" className="btn" value="Send Message" />  
+                                </li>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </>)

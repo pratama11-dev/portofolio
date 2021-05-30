@@ -6,7 +6,7 @@ const NavBar = () => {
         <header className="row">
           <div className="container">
             <nav className="menu">
-              <li>
+              <li className="nav-items">
                 <Link 
                     activeClass="active"
                     to="home"
@@ -18,7 +18,7 @@ const NavBar = () => {
                     <p>HOME</p>
                 </Link>
               </li>
-              <li>
+              <li className="nav-items">
                 <Link 
                     activeClass="active"
                     to="about"
@@ -30,7 +30,7 @@ const NavBar = () => {
                     <p>ABOUT ME</p>
                 </Link>
               </li>
-              <li>
+              <li className="nav-items">
                 <Link 
                     activeClass="active"
                     to="portfolio"
@@ -42,7 +42,7 @@ const NavBar = () => {
                     <p>PORTFOLIO</p>
                 </Link>
               </li>
-              <li>
+              <li className="nav-items">
                 <Link 
                     activeClass="active"
                     to="contact"

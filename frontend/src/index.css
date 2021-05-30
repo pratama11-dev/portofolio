@@ -29,7 +29,6 @@ body {
   margin: 1rem 0;
 }
 .form-container{
-  margin-top: 20rem;
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
@@ -257,6 +256,9 @@ header a {
   padding: 8px;
   transition: .3s;
 }
+.nav-items > .active {
+  border-bottom: 1px solid #182f36;
+}
 /* .menu p:hover{
   color: #f7ce17;
 } */
@@ -376,6 +378,7 @@ header a {
 }
 
 .banner h1{
+  text-align: left;
   margin-top: 150px;
   color: #182f36;
 }
@@ -413,7 +416,7 @@ header a {
   font-weight: bolder;
   position: relative;
   background: url('./backround.jpg')no-repeat;
-  background-position: center;
+  background-position: right;
   background-size: cover;
   height: 90vh;
 }
