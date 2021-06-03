@@ -60,6 +60,15 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #05808b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
 span{
   font-weight: bolder;
 }
@@ -201,7 +210,8 @@ header a {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-45%, -50%);
+  /* transform: translate(-50%, -50%); */
 }
 .menu li{
   font-size: 12pt;
