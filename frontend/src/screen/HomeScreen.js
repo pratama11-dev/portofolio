@@ -4,6 +4,8 @@ import axios from 'axios';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Link } from 'react-scroll';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 export default function HomeScreen() {
 
@@ -22,6 +24,7 @@ export default function HomeScreen() {
     const [portfolio, setPortfolio] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+
     useEffect(() => {
         const fecthData = async () => {
             try {
@@ -35,13 +38,24 @@ export default function HomeScreen() {
               }
             };
             fecthData();
-          }, []);
+          }, 
+        []
+    );
+
+    useEffect(()=>{
+        Aos.init({ 
+            offset: 200,
+            duration: 600,
+            delay: 100,
+        })
+    })
 
     return (<>
         <div className="row">
             <div className="col-1" id="home">
                 <div className="banner">
-                    <h1>PORT<span>FOLIO</span></h1>
+                    <h1>MY<br/>PORT<span>FOLIO</span></h1>
+                    <div className="border"></div>
                     <div className="btn">
                         <Link 
                             activeClass="active"
@@ -56,6 +70,9 @@ export default function HomeScreen() {
                     </div>
                 </div>
             </div>
+            {/* <div className="col-2">
+                <img src="../img/backgroundHeader.svg" alt="" />
+            </div> */}
         </div>
         <div className="wave">
             <img src="../img/wave.png" alt=""/>
@@ -67,16 +84,16 @@ export default function HomeScreen() {
                 <h2>About Me</h2>
             </div>
             <div className="row">
-                <div className="col-2">
+                <div className="col-2" data-aos="slide-right">
                     <img src="../img/fotoprofile.png" alt=""/>
                 </div>
-                <div className="col-1">
+                <div className="col-1" data-aos="slide-left">
                     <p>Hello! I am Adit. I have been depveloping website. I'm Frontend Enginer.
                         Technologies i use is MERN Stack. I create responsive website that  are displayed
                         on all device desktop and smartphones. Before i start developing website. i will
                         discuss all the details of your Idea.
                     </p>
-                    <a className="btnRead" 
+                    <a className="btnRead"
                         href="https://drive.google.com/drive/folders/157HSNEdKUz2JGVKKsClytfnpXu6ZVAsH?usp=sharing"
                         >See My CV
                     </a>
@@ -96,7 +113,7 @@ export default function HomeScreen() {
                     error?<MessageBox>{error}</MessageBox>
                     :<>
                     {portfolio.map((portfolio) => (
-                        <div className="col-3">
+                        <div className="col-3" data-aos="slide-up">
                             <a href={portfolio.link}>
                                 <img src={portfolio.gambar} alt=""/>
                             </a>
@@ -123,39 +140,37 @@ export default function HomeScreen() {
         </div>
         
         <div className="container">
-            <div className="row">
-                <form className="form" onSubmit={sendEmail}>
-                    <div className="row">
-                        {/* <div className="col-2-simulasi">
-                            <img src="../img/handshake.png" />
-                        </div> */}
-                        <div className="col-2-simulasi">
-                            <div className="form-container" id="contact">
-                                <h2>Contact Me</h2>
-                                <label>Name</label>
-                                <li>
-                                    <input type="text" placeholder="Name" name="name" />
-                                </li>
-                                <label>Email</label>
-                                <li>
-                                    <input type="email" placeholder="Email Address" name="mail" />
-                                </li>
-                                <label>Subject</label>
-                                <li>
-                                    <input type="text" placeholder="subject" name="subject" />
-                                </li>
-                                <label>Message</label>
-                                <li>
-                                    <textarea type="text" id="" cols="30" rows="8" placeholder="Your Message" name="message" />
-                                </li>
-                                <li>
-                                    <input type="submit" className="btn" value="Send Message" />  
-                                </li>
-                            </div>
-                        </div>
+            <form onSubmit={sendEmail}>
+                <div className="row">
+                    <div className="col-2-simulasi">
+                        <img src="../img/email.svg" alt=""/>
                     </div>
-                </form>
-            </div>
+                    <div className="col-2-simulasi">
+                        <div className="form-container" id="contact">
+                            <h2>Contact Me</h2>
+                            <label>Name</label>
+                            <li>
+                                <input type="text" placeholder="Name" name="name" />
+                            </li>
+                            <label>Email</label>
+                            <li>
+                                <input type="email" placeholder="Email Address" name="mail" />
+                            </li>
+                            <label>Subject</label>
+                            <li>
+                                <input type="text" placeholder="subject" name="subject" />
+                            </li>
+                            <label>Message</label>
+                            <li>
+                                <textarea type="text" id="" cols="30" rows="8" placeholder="Your Message" name="message" />
+                            </li>
+                            <li>
+                                <input type="submit" value="Send Message" />  
+                            </li>
+                        </div>   
+                    </div>
+                </div>
+            </form>
         </div>
     </>)
 }
