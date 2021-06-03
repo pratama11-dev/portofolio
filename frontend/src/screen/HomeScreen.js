@@ -79,62 +79,66 @@ export default function HomeScreen() {
         </div>
 
         <div className="container" id="about">
-            <div className="topik">
-                <p>Let me introduce myself</p>
-                <h2>About Me</h2>
-            </div>
-            <div className="row">
-                <div className="col-2" data-aos="slide-right">
-                    <img src="../img/fotoprofile.png" alt=""/>
+            <div className="about">
+                <div className="topik">
+                    <p>Let me introduce myself</p>
+                    <h2>About Me</h2>
                 </div>
-                <div className="col-1" data-aos="slide-left">
-                    <p>Hello! I am Adit. I have been depveloping website. I'm Frontend Enginer.
-                        Technologies i use is MERN Stack. I create responsive website that  are displayed
-                        on all device desktop and smartphones. Before i start developing website. i will
-                        discuss all the details of your Idea.
-                    </p>
-                    <a className="btnRead"
-                        href="https://drive.google.com/drive/folders/157HSNEdKUz2JGVKKsClytfnpXu6ZVAsH?usp=sharing"
-                        >See My CV
-                    </a>
+                <div className="row">
+                    <div className="col-2" data-aos="slide-right">
+                        <img src="../img/fotoprofile.png" alt=""/>
+                    </div>
+                    <div className="col-1" data-aos="slide-left">
+                        <p>Hello! I am Adit. I have been depveloping website. I'm Frontend Enginer.
+                            Technologies i use is MERN Stack. I create responsive website that  are displayed
+                            on all device desktop and smartphones. Before i start developing website. i will
+                            discuss all the details of your Idea.
+                        </p>
+                        <a className="btnRead"
+                            href="https://drive.google.com/drive/folders/157HSNEdKUz2JGVKKsClytfnpXu6ZVAsH?usp=sharing"
+                            >See My CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div className="container" id="portfolio">
-            <div className="topik">
-                <p>some of my recent works</p>
-                <h2>Projects</h2>
-            </div>
-            <div className="small-container">
-                <div className="row">
-                    {loading? <LoadingBox></LoadingBox>
-                    :
-                    error?<MessageBox>{error}</MessageBox>
-                    :<>
-                    {portfolio.map((portfolio) => (
-                        <div className="col-3" data-aos="slide-up">
-                            <a href={portfolio.link}>
-                                <img src={portfolio.gambar} alt=""/>
+            <div className="portfolio">
+                <div className="topik">
+                    <p>some of my recent works</p>
+                    <h2>Projects</h2>
+                </div>
+                <div className="small-container">
+                    <div className="row">
+                        {loading? <LoadingBox></LoadingBox>
+                        :
+                        error?<MessageBox>{error}</MessageBox>
+                        :<>
+                        {portfolio.map((portfolio) => (
+                            <div className="col-3" data-aos="slide-up">
+                                <a href={portfolio.link}>
+                                    <img src={portfolio.gambar} alt=""/>
+                                </a>
+                                <a href={portfolio.link}>
+                                    <h2>{portfolio.nama}</h2>
+                                </a>
+                                <p>{portfolio.desc}</p>
+                            </div>
+                        ))}
+                        {/* <div className="col-3">
+                            <a href="https://virtual-lab-biology.herokuapp.com/">
+                                <img src="../img/virtuallab.png" alt=""/>
                             </a>
-                            <a href={portfolio.link}>
-                                <h2>{portfolio.nama}</h2>
+                            <a href="https://tokopaedi.herokuapp.com/">
+                                <h2>Virtual Biologi Lab</h2>
                             </a>
-                            <p>{portfolio.desc}</p>
-                        </div>
-                    ))}
-                    {/* <div className="col-3">
-                        <a href="https://virtual-lab-biology.herokuapp.com/">
-                            <img src="../img/virtuallab.png" alt=""/>
-                        </a>
-                        <a href="https://tokopaedi.herokuapp.com/">
-                            <h2>Virtual Biologi Lab</h2>
-                        </a>
-                        <p />Virtual laboratory is a computer-based media that can be used for students to conduct experiments and can increase 
-                        enthusiasm and motivate students. The use of a virtual laboratory can save time, 
-                        and learning is more interesting. 
-                    </div> */}
-                    </>}
+                            <p />Virtual laboratory is a computer-based media that can be used for students to conduct experiments and can increase 
+                            enthusiasm and motivate students. The use of a virtual laboratory can save time, 
+                            and learning is more interesting. 
+                        </div> */}
+                        </>}
+                    </div>
                 </div>
             </div>
         </div>

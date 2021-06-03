@@ -394,6 +394,13 @@ header a {
   margin: 0 auto;
 }
 
+.about{
+  height: 90vh;
+}
+.portfolio{
+  height: 90vh;
+}
+
 /* Form */
 .form {
   max-width: 45rem;
