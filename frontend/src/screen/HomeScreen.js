@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com'
 import axios from 'axios';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 export default function HomeScreen() {
 
@@ -42,11 +42,18 @@ export default function HomeScreen() {
             <div className="col-1" id="home">
                 <div className="banner">
                     <h1>PORT<span>FOLIO</span></h1>
-                    {/* <div className="btn">
-                        <Link to="/">
+                    <div className="btn">
+                        <Link 
+                            activeClass="active"
+                            to="portfolio"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
                             See My Works
                         </Link>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,7 +68,7 @@ export default function HomeScreen() {
             </div>
             <div className="row">
                 <div className="col-2">
-                    <img src="../img/pasfoto.png" alt=""/>
+                    <img src="../img/fotoprofile.png" alt=""/>
                 </div>
                 <div className="col-1">
                     <p>Hello! I am Adit. I have been depveloping website. I'm Frontend Enginer.
