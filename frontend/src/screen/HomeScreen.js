@@ -81,7 +81,7 @@ export default function HomeScreen() {
         <div className="container" id="about">
             <div className="about">
                 <div className="topik">
-                    <p>Let me introduce myself</p>
+                    <p>let me introduce myself</p>
                     <h2>About Me</h2>
                 </div>
                 <div className="row">
@@ -89,10 +89,11 @@ export default function HomeScreen() {
                         <img src="../img/fotoprofile.png" alt=""/>
                     </div>
                     <div className="col-1" data-aos="slide-left">
-                        <p>Hello! I am Adit. I have been depveloping website. I'm Frontend Enginer.
-                            Technologies i use is MERN Stack. I create responsive website that  are displayed
-                            on all device desktop and smartphones. Before i start developing website. i will
-                            discuss all the details of your Idea.
+                        <p>Hello! I am Adithya Nuz Pratama. Thank you for visiting my website. 
+                            I use MERN Stack to develop my website. I will make a responsive website, easy to use, 
+                            and easy to reach both when accessed via a desktop or smartphone. 
+                            If you have specific criteria for building your website, 
+                            I am very open to building on your ideas and concepts for your website.
                         </p>
                         <a className="btnRead"
                             href="https://drive.google.com/drive/folders/157HSNEdKUz2JGVKKsClytfnpXu6ZVAsH?usp=sharing"

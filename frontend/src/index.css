@@ -407,9 +407,6 @@ header a {
 .about{
   height: 90vh;
 }
-.portfolio{
-  height: 90vh;
-}
 
 /* Form */
 .form {
@@ -434,7 +431,6 @@ header a {
   border: .1rem #d1d1d1 solid;
   border-radius: .5rem;
   background: #ffffff;
-  z-index: 1;
 }
 
 .form-container li{
