@@ -38,12 +38,12 @@ export default function HomeScreen() {
               }
             };
             fecthData();
-          }, 
+          },
         []
     );
 
     useEffect(()=>{
-        Aos.init({ 
+        Aos.init({
             offset: 200,
             duration: 600,
             delay: 100,
@@ -57,7 +57,7 @@ export default function HomeScreen() {
                     <h1>MY<br/>PORT<span>FOLIO</span></h1>
                     <div className="border"></div>
                     <div className="btn">
-                        <Link 
+                        <Link
                             activeClass="active"
                             to="portfolio"
                             spy={true}
@@ -89,10 +89,10 @@ export default function HomeScreen() {
                         <img src="../img/fotoprofile.png" alt=""/>
                     </div>
                     <div className="col-1" data-aos="slide-left">
-                        <p>Hello! I am Adithya Nuz Pratama. Thank you for visiting my website. 
-                            I use MERN Stack to develop my website. I will make a responsive website, easy to use, 
-                            and easy to reach both when accessed via a desktop or smartphone. 
-                            If you have specific criteria for building your website, 
+                        <p>Hello! I am Adithya Nuz Pratama. Thank you for visiting my website.
+                            I use MERN Stack to develop my website. I will make a responsive website, easy to use,
+                            and easy to reach both when accessed via a desktop or smartphone.
+                            If you have specific criteria for building your website,
                             I am very open to building on your ideas and concepts for your website.
                         </p>
                         <a className="btnRead"
@@ -111,7 +111,7 @@ export default function HomeScreen() {
                     <h2>Projects</h2>
                 </div>
                 <div className="small-container">
-                    <div className="row">
+                    <div className="row" style="display: flex;align-items: baseline;">
                         {loading? <LoadingBox></LoadingBox>
                         :
                         error?<MessageBox>{error}</MessageBox>
@@ -134,16 +134,16 @@ export default function HomeScreen() {
                             <a href="https://tokopaedi.herokuapp.com/">
                                 <h2>Virtual Biologi Lab</h2>
                             </a>
-                            <p />Virtual laboratory is a computer-based media that can be used for students to conduct experiments and can increase 
-                            enthusiasm and motivate students. The use of a virtual laboratory can save time, 
-                            and learning is more interesting. 
+                            <p />Virtual laboratory is a computer-based media that can be used for students to conduct experiments and can increase
+                            enthusiasm and motivate students. The use of a virtual laboratory can save time,
+                            and learning is more interesting.
                         </div> */}
                         </>}
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div className="container">
             <form onSubmit={sendEmail}>
                 <div className="row">
@@ -170,9 +170,9 @@ export default function HomeScreen() {
                                 <textarea type="text" id="" cols="30" rows="8" placeholder="Your Message" name="message" />
                             </li>
                             <li>
-                                <input type="submit" value="Send Message" />  
+                                <input type="submit" value="Send Message" />
                             </li>
-                        </div>   
+                        </div>
                     </div>
                 </div>
             </form>
