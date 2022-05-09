@@ -111,7 +111,7 @@ export default function HomeScreen() {
                     <h2>Projects</h2>
                 </div>
                 <div className="small-container">
-                    <div className="row" style="display: flex;align-items: baseline;">
+                    <div className="row" style={{display: "flex",alignItems: "baseline"}}>
                         {loading? <LoadingBox></LoadingBox>
                         :
                         error?<MessageBox>{error}</MessageBox>
